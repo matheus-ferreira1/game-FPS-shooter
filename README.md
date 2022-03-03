@@ -4,4 +4,4 @@ Projeto pessoal de um jogo desenvolvido inteiramente com JavaScript. O grande de
 
 ### Desafios a serem implementados:
 - Aprimorar a passagem dos dados de dificuldade da tela inicial para o jogo em si;
-- Adicionar a funcionalidade de escolher um time na tela inicial e mudar a exibição dos targets baseado nisso;
+- Adicionar a funcionalidade de escolher um time na tela inicial e alterar o target a ser exibido baseado nisso;
