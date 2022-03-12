@@ -6,8 +6,11 @@ let tempo = 15;
 
 let criaTargetTempo = 1500;
 
-let nivel = window.location.search
-nivel = nivel.replace('?', '')
+let nivel = localStorage.getItem('level')
+let time = localStorage.getItem('team')
+
+//console.log(nivel, time)
+
 
 if (nivel === 'facil') {
     criaTargetTempo = 1500
@@ -21,7 +24,7 @@ function ajustaTamanhoJogo() {
     altura = window.innerHeight
 	largura = window.innerWidth
 
-	console.log(largura, altura)
+	//console.log(largura, altura)
 }
 
 ajustaTamanhoJogo()
@@ -61,7 +64,12 @@ function posicaoRandomica() {
     console.log(posicaoX, posicaoY)
 
     let target = document.createElement('img')
-    target.src = "img/terro.png"
+    if (time === 'ct') {
+        target.src = "img/terro.png"
+    } else if (time === 'terro') {
+        target.src = "img/ct.png"
+    }
+
     target.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
     target.style.left = posicaoX + 'px'
     target.style.top = posicaoY + 'px'

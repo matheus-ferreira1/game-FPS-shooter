@@ -13,17 +13,32 @@
         function iniciarJogo() {
             let nivel = document.getElementById('nivel').value;
 
+            let time = document.getElementById('time').value;
+
             if (nivel === '') {
                 alert('Selecione um nível para poder iniciar')
                 return false
             }
 
-            window.location.href = 'jogo.html?' + nivel
-        }
+            if (time === '') {
+                alert('Selecione um time para poder iniciar')
+                return false;
+            }
+
+            let runGame = {
+                level: nivel,
+                team: time
+            }
+            
+            window.location.href = 'jogo.html'
+
+            localStorage.setItem('team', time)
+            localStorage.setItem('level', nivel)
+       }
 
     </script>
 
-    <title>Document</title>
+    <title>FPS Trainer</title>
 
 </head>
 <body>
@@ -32,7 +47,21 @@
         <div class="row">
             <div class="col">
                 <div class="d-flex justify-content-center">
-                    <img src="img/inicio.png">
+                    <img src="img/inicio.png" style="width: 50%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="d-flex justify-content-center">
+                <div class="mb-2">
+                    <select class="form-control" id="time">
+                        <option value="">Selecione o Time</option>
+                        <option value="ct">Counter-terrorists</option>
+                        <option value="terro">Terrorists</option>
+                    </select>
                 </div>
             </div>
         </div>

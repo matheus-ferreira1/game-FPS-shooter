@@ -6,7 +6,8 @@ body {
     background-image: url(img/bg.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    overflow: hidden
+    overflow: hidden;
+    height: 100vh;
 }
 
 .target1 {
